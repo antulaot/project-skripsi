@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "sonarlint.ls.javaHome": null, 
+  "sonarlint.rules": {
+    // Mengaktifkan aturan strict TypeScript
+    "typescript:S1481": "on", // Unused local variables (Hapus sampah!)
+    "typescript:S1854": "on", // Unused assignments
+    "typescript:S3776": "on"  // Cognitive Complexity (Jangan bikin fungsi terlalu ribet!)
+  }
+}
