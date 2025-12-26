@@ -76,6 +76,33 @@ export type Database = {
         }
         Relationships: []
       }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          organization_id: string | null
+          role: Database["public"]["Enums"]["user_role"] | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id: string
+          organization_id?: string | null
+          role?: Database["public"]["Enums"]["user_role"] | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          organization_id?: string | null
+          role?: Database["public"]["Enums"]["user_role"] | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -86,6 +113,7 @@ export type Database = {
     Enums: {
       inventory_category: "PUPUK" | "HERBISIDA" | "SPAREPART" | "BARANG UMUM"
       unit_type: "KG" | "LITER" | "UNIT" | "BUAH"
+      user_role: "super_admin" | "admin" | "kepala gudang" | "staff" | "manager"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -218,6 +246,7 @@ export const Constants = {
     Enums: {
       inventory_category: ["PUPUK", "HERBISIDA", "SPAREPART", "BARANG UMUM"],
       unit_type: ["KG", "LITER", "UNIT", "BUAH"],
+      user_role: ["super_admin", "admin", "kepala gudang", "staff", "manager"],
     },
   },
 } as const
